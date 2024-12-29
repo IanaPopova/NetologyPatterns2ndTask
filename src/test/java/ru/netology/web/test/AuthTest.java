@@ -30,7 +30,6 @@ class AuthTest {
         $("[data-test-id='password'] input").setValue(registeredUser.getPassword());
         $("[data-test-id='action-login']").click();
         $("h2").should(Condition.text("Личный кабинет"), Condition.visible);
-
     }
 
     @Test
@@ -55,7 +54,6 @@ class AuthTest {
         $("[data-test-id='error-notification'] .notification__content")
                 .shouldHave(Condition.text("Ошибка! Пользователь заблокирован"), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
-
     }
 
     @Test
@@ -82,6 +80,5 @@ class AuthTest {
         $("[data-test-id='error-notification'] .notification__content")
                 .shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
-
     }
 }
